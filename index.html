@@ -6,18 +6,19 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #1e3a8a; /* blue background */
+            /* Minimalist light blue gradient */
+            background: linear-gradient(to bottom, #d9f0ff, #a3d4ff);
             text-align: center;
             padding-top: 80px;
             overflow-x: hidden;
         }
 
-        /* Moving car */
+        /* Moving cars */
         .road {
             position: absolute;
             top: 20px;
             width: 100%;
-            height: 60px;
+            height: 80px;
             overflow: hidden;
         }
 
@@ -28,13 +29,14 @@
             animation: moveCar 8s linear infinite;
         }
 
+        .car.second {
+            top: 50px; /* second car slightly below the first */
+            animation-duration: 12s; /* different speed for variety */
+        }
+
         @keyframes moveCar {
-            from {
-                left: -60px;
-            }
-            to {
-                left: 100%;
-            }
+            from { left: -60px; }
+            to { left: 100%; }
         }
 
         .container {
@@ -49,14 +51,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         h1 {
@@ -96,13 +92,6 @@
             transform: translateY(-4px);
             box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
         }
-
-        .footer {
-            margin-top: 30px;
-            color: #0d47a1;
-            font-size: 14px;
-            font-weight: bold;
-        }
     </style>
 </head>
 
@@ -111,10 +100,11 @@
     <!-- Moving car animation -->
     <div class="road">
         <div class="car">🚗</div>
+        <div class="car second">🚙</div>
     </div>
 
     <div class="container">
-        <h1>AUTOMOTIVE CAPSTONE PROJECT</h1>
+        <h1>🚙AUTOMOTIVE CAPSTONE PROJECT🚗</h1>
         <hr class="line">
 
         <h2>Team Members</h2>
@@ -125,8 +115,6 @@
         <div class="member">4. 57151 - Nitin Kumar</div>
         <div class="member">5. 55908 - Lenka Sweta</div>
         <div class="member">6. 55927 - Palavalasa Rajesh</div>
-
-        <p class="footer">© 2026 Automotive Capstone Project</p>
     </div>
 
 </body>
