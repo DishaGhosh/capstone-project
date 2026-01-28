@@ -6,29 +6,40 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #1e3a8a; /* blue background */
+            background-color: #3b82f6; /* lighter blue */
             text-align: center;
-            padding-top: 80px;
+            padding-top: 100px;
             overflow-x: hidden;
         }
 
-        /* Moving car */
+        /* Road area */
         .road {
-            position: absolute;
+            position: fixed;
             top: 20px;
             width: 100%;
             height: 60px;
             overflow: hidden;
+            z-index: 1;
         }
 
-        .car {
-            font-size: 40px;
+        .vehicle {
+            font-size: 36px;
             position: absolute;
             left: -60px;
-            animation: moveCar 8s linear infinite;
+            animation: moveVehicle 10s linear infinite;
         }
 
-        @keyframes moveCar {
+        .vehicle.two {
+            top: 20px;
+            animation-delay: 3s;
+        }
+
+        .vehicle.three {
+            top: 40px;
+            animation-delay: 6s;
+        }
+
+        @keyframes moveVehicle {
             from {
                 left: -60px;
             }
@@ -46,6 +57,8 @@
             border-radius: 15px;
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
             animation: fadeIn 1.2s ease-in-out;
+            z-index: 2;
+            position: relative;
         }
 
         @keyframes fadeIn {
@@ -60,7 +73,7 @@
         }
 
         h1 {
-            color: #0d47a1; /* dark blue text */
+            color: #0d47a1;
             font-size: 26px;
             margin-bottom: 10px;
             white-space: nowrap;
@@ -96,21 +109,16 @@
             transform: translateY(-4px);
             box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
         }
-
-        .footer {
-            margin-top: 30px;
-            color: #0d47a1;
-            font-size: 14px;
-            font-weight: bold;
-        }
     </style>
 </head>
 
 <body>
 
-    <!-- Moving car animation -->
+    <!-- Moving vehicles -->
     <div class="road">
-        <div class="car">🚗</div>
+        <div class="vehicle">🚗</div>
+        <div class="vehicle two">🚙</div>
+        <div class="vehicle three">🚕</div>
     </div>
 
     <div class="container">
@@ -125,8 +133,6 @@
         <div class="member">4. 57151 - Nitin Kumar</div>
         <div class="member">5. 55908 - Lenka Sweta</div>
         <div class="member">6. 55927 - Palavalasa Rajesh</div>
-
-        <p class="footer">© 2026 Automotive Capstone Project</p>
     </div>
 
 </body>
