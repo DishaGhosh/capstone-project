@@ -5,12 +5,53 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #f8bbd0, #fce4ec); /* light pink */
+            background: linear-gradient(to right, #f8bbd0, #fce4ec);
             text-align: center;
             padding-top: 60px;
+            overflow: hidden;
+        }
+
+        /* BUBBLES */
+        .bubbles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in;
+        }
+
+        .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 8s; }
+        .bubble:nth-child(2) { width: 25px; height: 25px; left: 20%; animation-duration: 6s; }
+        .bubble:nth-child(3) { width: 50px; height: 50px; left: 35%; animation-duration: 10s; }
+        .bubble:nth-child(4) { width: 30px; height: 30px; left: 50%; animation-duration: 7s; }
+        .bubble:nth-child(5) { width: 45px; height: 45px; left: 65%; animation-duration: 9s; }
+        .bubble:nth-child(6) { width: 20px; height: 20px; left: 80%; animation-duration: 5s; }
+        .bubble:nth-child(7) { width: 35px; height: 35px; left: 90%; animation-duration: 8s; }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
         }
 
         .container {
+            position: relative;
+            z-index: 1;
             background-color: #ffffff;
             width: 90%;
             max-width: 600px;
@@ -21,20 +62,20 @@
         }
 
         h1 {
-            color: #ad1457; /* dark pink */
+            color: #0d47a1;
             margin-bottom: 15px;
             font-size: 22px;
             white-space: nowrap;
         }
 
         h2 {
-            color: #c2185b; /* dark pink */
+            color: #0d47a1;
             margin-bottom: 20px;
         }
 
         .member {
-            background-color: #fce4ec; /* light pink */
-            color: #880e4f; /* dark pink text */
+            background-color: #fce4ec;
+            color: #0d47a1;
             margin: 10px auto;
             padding: 10px;
             width: 90%;
@@ -46,6 +87,17 @@
 </head>
 
 <body>
+
+    <!-- Bubble Background -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
 
     <div class="container">
         <h1>🚙🚗 AUTOMOTIVE CAPSTONE PROJECT 🚗🚙</h1>
